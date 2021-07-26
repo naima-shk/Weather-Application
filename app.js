@@ -24,14 +24,14 @@ function getResults(query){
 function displayResults(weather){
     //console.log(weather);
     let city =document.querySelector('.location .city');
-    city.innerText = `${weather.name}, ${weather.sys.country}`;
+    city.innerText = `${weather.name} ${weather.sys.country}`;
 
     let now = new Date()
     let date = document.querySelector('.location .date');
     date.innerText=dateBuilder(now);
 
     let temp = document.querySelector('.current .temp');
-    temp.innerHTML= `${Math.round(weather.main.temp).toFixed(0)}<span>C</span>`
+    temp.innerHTML= `${Math.round(weather.main.temp)}<span>C</span>`
     let weather_el =document.querySelector('.current .weather');
     weather_el.innerText=weather.weather[0].main;
     let hilow =document.querySelector('.hi-low');
