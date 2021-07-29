@@ -2,6 +2,9 @@ const api ={
     key: 'a32b37de442b205107ea2a2805ca54e7',
     base: 'https://api.openweathermap.org/data/2.5/'
 }
+let now = new Date();
+  let date = document.querySelector('.location .date');
+  date.innerText = dateBuilder(now);
 //set up event listener on the search box
 const searchbox= document.querySelector('.search-box');
 searchbox.addEventListener('keypress', setQuery);
@@ -19,16 +22,15 @@ function getResults(query){
   .then(weather =>{
       return weather.json();
   }).then(displayResults);
-​
-}
+​}
 function displayResults(weather){
     //console.log(weather);
     let city =document.querySelector('.location .city');
     city.innerText = `${weather.name}, ${weather.sys.country}`;
 ​
-    let now = new Date()
-    let date = document.querySelector('.location .date');
-    date.innerText=dateBuilder(now);
+    //let now = new Date()
+    //let date = document.querySelector('.location .date');
+    //date.innerText=dateBuilder(now);
 ​
     let temp = document.querySelector('.current .temp');
     temp.innerHTML= `${Math.round(weather.main.temp)}<span>C</span>`
