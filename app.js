@@ -1,10 +1,14 @@
+let now = new Date();
+  let date = document.querySelector('.location .date');
+  date.innerText = dateBuilder(now);
+
 const api ={
     key: 'a32b37de442b205107ea2a2805ca54e7',
     base: 'https://api.openweathermap.org/data/2.5/'
 }
-let now = new Date();
+/*let now = new Date();
   let date = document.querySelector('.location .date');
-  date.innerText = dateBuilder(now);
+  date.innerText = dateBuilder(now);*/
 //set up event listener on the search box
 const searchbox= document.querySelector('.search-box');
 searchbox.addEventListener('keypress', setQuery);
